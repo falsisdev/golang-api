@@ -5,6 +5,11 @@ import(
 	"net/http"
 	"strings"
 )
+func error(file){
+return {
+"./hata/" + file + ".json"
+}
+}
 func main() {
 	fmt.Print("Proje Başlatıldı\n")
 	e := echo.New()
@@ -16,7 +21,7 @@ func main() {
 	})
 	e.GET("/owofy", func(c echo.Context) error{
 		if c.QueryParam("message") == "" {
-			return c.File("./hata/owofy.json")
+			return c.File(error("owofy"))
 		}
 		owo := strings.Replace(strings.Replace(c.QueryParam("message"), "l", "w", -1), "r", "w", -1)
 		return c.JSON(http.StatusOK, owo)
