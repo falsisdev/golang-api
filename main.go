@@ -1,15 +1,18 @@
 package main
+////////////////-------------\\\\\\\\\\\\\\
 import(
 	"fmt"
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"strings"
 )
+////////////////-------------\\\\\\\\\\\\\\
 func error(file){
-return {
-"./hata/", file, ".json"
+     return {
+     "./hata/", file, ".json"
+      }
 }
-}
+////////////////-------------\\\\\\\\\\\\\\
 func main() {
 	fmt.Print("Proje Başlatıldı\n")
 	e := echo.New()
@@ -28,3 +31,4 @@ func main() {
 	})
 	e.Logger.Fatal(e.Start(":3000"))
 }
+////////////////-------------\\\\\\\\\\\\\\
