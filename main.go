@@ -7,7 +7,7 @@ import(
 )
 func error(file){
 return {
-"./hata/" + file + ".json"
+"./hata/", file, ".json"
 }
 }
 func main() {
